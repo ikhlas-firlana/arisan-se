@@ -17,10 +17,7 @@ class CirclePersonListLayout extends Table
         return [
             TD::make('name', 'Name'),
             TD::make('klaim', 'Klaim Date'),
-            TD::make('', 'Action')
-                ->render(function (Repository $r) {
-                    return "Klaim Now";
-                }),
+            TD::make('info', 'Action'),
         ];
     }
 }

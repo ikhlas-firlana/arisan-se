@@ -17,9 +17,23 @@ class KasKlaimScreen extends Screen
             'people' => [
                 new Repository([
                     'name' => 'Ibu Indah',
+                    'klaim' => '2023-10-21 11:00',
+                    'info' => '-'
                 ]),
                 new Repository([
                     'name' => 'Ibu Vivi',
+                    'klaim' => '-',
+                    'info' => 'Klaim now'
+                ]),
+                new Repository([
+                    'name' => 'Ibu Endang',
+                    'klaim' => '-',
+                    'info' => 'Klaim now'
+                ]),
+                new Repository([
+                    'name' => 'Ibu Titi',
+                    'klaim' => '-',
+                    'info' => 'Klaim now'
                 ]),
             ]
         ];

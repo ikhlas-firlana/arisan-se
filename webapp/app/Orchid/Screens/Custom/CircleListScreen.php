@@ -39,6 +39,9 @@ class CircleListScreen extends Screen
     public function commandBar(): iterable
     {
         return [
+            Link::make('New Person')
+                ->icon('user')
+                ->route('platform.person.fields'),
             Link::make('New Circle')
                 ->icon('new-doc')
                 ->route('platform.circle.fields'),

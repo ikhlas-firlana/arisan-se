@@ -9,6 +9,7 @@ use App\Orchid\Screens\Custom\CircleScreen;
 use App\Orchid\Screens\Custom\KasKlaimScreen;
 use App\Orchid\Screens\Custom\KasListScreen;
 use App\Orchid\Screens\Custom\KasScreen;
+use App\Orchid\Screens\Custom\PersonScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -105,6 +106,7 @@ Route::screen('circle-add-fields', CirclePersonScreen::class)->name('platform.ci
 Route::screen('circle-kas-claim', KasKlaimScreen::class)->name('platform.circle-kas-klaim.list');
 Route::screen('kas-list', KasListScreen::class)->name('platform.kas.list');
 Route::screen('kas-fields', KasScreen::class)->name('platform.kas.fields');
+Route::screen('person-fields', PersonScreen::class)->name('platform.person.fields');
 
 Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
 Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
