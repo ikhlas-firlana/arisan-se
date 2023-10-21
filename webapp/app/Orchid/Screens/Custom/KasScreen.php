@@ -14,8 +14,9 @@ use Orchid\Support\Facades\Alert;
 use Orchid\Support\Facades\Layout;
 use Orchid\Support\Facades\Toast;
 
-class CircleScreen extends Screen
+class KasScreen extends Screen
 {
+
     /**
      * Fish text for the table.
      */
@@ -80,7 +81,7 @@ class CircleScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Circle';
+        return 'Kas';
     }
 
     /**
@@ -90,7 +91,7 @@ class CircleScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'Add circle person';
+        return '';
     }
 
     /**
@@ -127,15 +128,16 @@ class CircleScreen extends Screen
 
                 Input::make('name')
                     ->title('Name')
-                    ->placeholder('Type')
+                    ->placeholder('Enter name')
                     ->required()
-                    ->help('Input name Circle'),
+                    ->help('Input kas name'),
 
-//                Input::make('phone_number')
-//                    ->title('Mobile phone')
-//                    ->placeholder('Type')
-//                    ->required()
-//                    ->help('Input mobile phone'),
+
+                Input::make('amount')
+                    ->title('Amount')
+                    ->placeholder('Enter Amount')
+                    ->required()
+                    ->help('Input kas amount'),
 //
 //                    Input::make('email')
 //                        ->title('Email address')
@@ -150,12 +152,17 @@ class CircleScreen extends Screen
 //                    Label::make('static')
 //                        ->title('Static:')
 //                        ->value('email@example.com'),
-//
-//                Select::make('select')
-//                    ->title('Type')
-//                    ->required()
-//                    ->options(['Debit', 'Credit'])
-//                    ->help('Choose type transaction'),
+
+
+                Select::make('select')
+                    ->title('Bendahara')
+                    ->options(['', 'Ibu Indah', 'Ibu Vivi', 'Ibu Endang'])
+                    ->help('Pick Person'),
+
+                Select::make('select')
+                    ->title('Circle')
+                    ->options(['', 'Ibu PKK Indah Melati', 'SMA Kenangan Lama'])
+                    ->help('Pick Person'),
 
 //                    CheckBox::make('checkbox')
 //                        ->title('Checkbox')
@@ -175,7 +182,7 @@ class CircleScreen extends Screen
                     ->rows(6)
                     ->help('Description detail'),
 
-            ])->title('Profile'),
+            ])->title('Form Request Arisan'),
 //                Layout::rows([
 //                    Input::make('disabled_input')
 //                        ->title('Disabled Input')

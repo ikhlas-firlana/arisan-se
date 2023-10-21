@@ -6,25 +6,24 @@ use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
-class CircleListLayout extends Table
+class KasListLayout extends Table
 {
-    protected $target = 'circles';
+
+    protected $target = 'kas';
 
     protected function columns(): iterable
     {
         return [
             TD::make('name', 'Name'),
-            TD::make('', 'Action Add')
+            TD::make('', 'Arisan')
                 ->render(function () {
-                    return
-                        Link::make('Add Person')
-                        ->route('platform.circle-add.fields');
+                    return Link::make('Start')
+                        ->route('platform.circle-kas-klaim.list');
                 }),
             TD::make('', '#')
                 ->render(function () {
-                    return
-                        Link::make('Detail')
-                            ->route('platform.circle.fields');
+                    return Link::make('Detail')
+                        ->route('platform.kas.fields');
                 }),
         ];
     }
