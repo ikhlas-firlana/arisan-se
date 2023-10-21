@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\Custom\BudgetListScreen;
+use App\Orchid\Screens\Custom\CircleListScreen;
+use App\Orchid\Screens\Custom\CircleScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -15,6 +18,7 @@ use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
+use App\Orchid\Screens\Custom\BudgetScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
@@ -83,17 +87,23 @@ Route::screen('roles', RoleListScreen::class)
         ->push(__('Roles'), route('platform.systems.roles')));
 
 // Example...
-//Route::screen('example', ExampleScreen::class)
-//    ->name('platform.example')
-//    ->breadcrumbs(fn (Trail $trail) => $trail
-//        ->parent('platform.index')
-//        ->push('Example screen'));
-//
-//Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
-//Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
-//Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.example.charts');
-//Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
-//Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
-//Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
+Route::screen('example', ExampleScreen::class)
+    ->name('platform.example')
+    ->breadcrumbs(fn (Trail $trail) => $trail
+        ->parent('platform.index')
+        ->push('Example screen'));
+
+Route::screen('budget-list', BudgetListScreen::class)->name('platform.budget.list');
+Route::screen('budget-fields', BudgetScreen::class)->name('platform.budget.fields');
+Route::screen('circle-list', CircleListScreen::class)->name('platform.circle.list');
+Route::screen('circle-fields', CircleScreen::class)->name('platform.circle.fields');
+Route::screen('kas-fields', BudgetScreen::class)->name('platform.kas.fields');
+
+Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');
+Route::screen('example-layouts', ExampleLayoutsScreen::class)->name('platform.example.layouts');
+Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.example.charts');
+Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
+Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
+Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
